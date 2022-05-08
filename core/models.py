@@ -4,7 +4,7 @@ from django.contrib.auth.models import PermissionsMixin
 from core.managers import UserManager
 
 
-class GymUser(AbstractUser, PermissionsMixin):
+class User(AbstractUser, PermissionsMixin):
     username = None
     email = models.EmailField(unique=True)
 
