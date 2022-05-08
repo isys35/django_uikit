@@ -6,7 +6,7 @@ from core.managers import UserManager
 
 class User(AbstractUser, PermissionsMixin):
     username = None
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True, )
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

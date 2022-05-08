@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="{% static "dist/css/uikit.min.css" %}" />
+
+    <title>Вход</title>
+</head>
+<body>
+    <div class="uk-position-center">
+    <form class="login-form" method="post">
+        <legend class="uk-legend">Войти</legend>
+        {% if user.is_authenticated %}
+            <p>Вы уже выполнили вход</p>
+        {% else %}
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+            {% if form.non_field_errors %}
+                <ul>
+                {% for error in form.non_field_errors %}
+                    <li><em>{{ error|escape }}</em></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% for field in form.visible_fields %}
+                {% if field.errors %}
+                    <ul>
+                    {% for error in field.errors %}
+                    <li><em>{{ error|escape }}</em></li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+                <p>{{ field.label_tag }}<br>{{ field }}<br> {{ field.help_text }}</p>
+            {% endfor %}
+            <input type="hidden" name="next" value="{{ next }}">
+            <button class="uk-button uk-button-primary" type="submit">Войти</button>
+        {% endif %}
+    </form>
+    </div>
+</body>
+
+    <!-- UIkit JS -->
+    <script src="{% static "dist/js/uikit.min.js" %}"></script>
+    <script src="{% static "dist/js/uikit-icons.min.js" %}"></script>
+
+</html>
