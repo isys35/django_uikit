@@ -1,0 +1,41 @@
+{% load static %}
+{% load custom_tags %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% include 'layout/uikit_css.html' %}
+    {% block main_css %}
+        <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    {% endblock %}
+    <title>{% block title %}Главная страница{% endblock %}</title>
+</head>
+<body>
+    <header class="uk-background-primary tm-navbar-container uk-sticky uk-sticky-fixed uk-active uk-sticky-below">
+        <div class="uk-container uk-container-expand">
+            <nav class="uk-navbar">
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-item uk-logo uk-light" href="#">Logo</a>
+                </div>
+                <div class="uk-navbar-right">
+                    <a href="{% url "core:logout" %}" uk-icon="icon: sign-out" class="uk-light"></a>
+                </div>
+            </nav>
+        </div>
+        {% comment %}<div class="uk-panel uk-padding uk-background-primary uk-light">
+            <a class="uk-logo" href="#">Logo</a>
+        </div>{% endcomment %}
+    </header>
+
+</body>
+
+    {% include 'layout/uikit_js.html' %}
+
+    {% block main_js %}
+    {% endblock %}
+
+</html>
