@@ -9,9 +9,34 @@ python = "^3.10"
 Django = "^4.0.4"
 requests = "^2.27.1"
 psycopg2 = "^2.9.3"
+commitizen = "^2.25.0"
 
 [tool.poetry.dev-dependencies]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.commitizen]
+name = "cz_customize"
+
+[tool.commitizen.customize]
+message_template = "{{change_type}}:{% if show_message %} {{message}}{% endif %}"
+example = "👨‍💻 FEAT: Изменяем вид коммитов"
+
+[[tool.commitizen.customize.questions]]
+type = "list"
+name = "change_type"
+choices = ["👨‍💻 FEAT", "🐞 FIX", "🛠 REFACTOR", "🔨 TEST", "📚 DOCS"]
+message = "Select the type of change you are committing"
+
+[[tool.commitizen.customize.questions]]
+type = "input"
+name = "message"
+message = "Тело сообщения коммита"
+
+[[tool.commitizen.customize.questions]]
+type = "confirm"
+name = "show_message"
+message = "Вы хотите добавить сообщение коммита?"
