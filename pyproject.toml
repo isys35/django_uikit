@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "gym"
+version = "0.1.0"
+description = ""
+authors = ["Дмитрий <55105946+isys35@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.0.4"
+requests = "^2.27.1"
+psycopg2 = "^2.9.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
