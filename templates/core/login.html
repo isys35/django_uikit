@@ -10,11 +10,11 @@
 
     {% include 'layout/uikit_css.html' %}
 
-    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
     <title>Вход</title>
 </head>
 <body>
-    <div class="uk-position-center">
+<div class="uk-position-center uk-card uk-card-default uk-padding-large">
     <form class="login-form" method="post">
         <legend class="uk-legend">Войти</legend>
         {% if user.is_authenticated %}
@@ -31,29 +31,29 @@
                 <div class="uk-inline">
                     <span class="uk-form-icon" uk-icon="icon: user"></span>
                     {% if form.non_field_errors %}
-                        {{ form.username|add_classes:'uk-input uk-form-danger'}}
-                        {% else %}
-                        {{ form.username|add_classes:'uk-input'}}
+                        {{ form.username|add_classes:'uk-input uk-form-danger' }}
+                    {% else %}
+                        {{ form.username|add_classes:'uk-input' }}
                     {% endif %}
-               </div>
+                </div>
             </div>
             <div class="uk-margin">
                 <div class="uk-inline">
                     <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
                     {% if form.non_field_errors %}
-                        {{ form.password|add_classes:'uk-input uk-form-danger'}}
-                        {% else %}
-                        {{ form.password|add_classes:'uk-input'}}
+                        {{ form.password|add_classes:'uk-input uk-form-danger' }}
+                    {% else %}
+                        {{ form.password|add_classes:'uk-input' }}
                     {% endif %}
-               </div>
+                </div>
             </div>
             <input type="hidden" name="next" value="{{ next }}">
             <button class="uk-button uk-button-primary" type="submit">Войти</button>
         {% endif %}
     </form>
-    </div>
+</div>
 </body>
 
-    {% include 'layout/uikit_js.html' %}
+{% include 'layout/uikit_js.html' %}
 
 </html>
