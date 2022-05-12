@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # myapps
-    'core'
+    'core',
+    'trener'
 ]
 
 MIDDLEWARE = [
