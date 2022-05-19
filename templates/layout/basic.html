@@ -19,7 +19,7 @@
         <div class="uk-container uk-container-expand">
             <nav class="uk-navbar">
                 <div class="uk-navbar-left">
-                    <a class="uk-navbar-item uk-logo uk-light" href="#">Logo</a>
+                    <a class="uk-navbar-item uk-logo uk-light" href="{% url "core:main" %}">Logo</a>
                 </div>
                 <div class="uk-navbar-right">
                     <a href="{% url "core:logout" %}" uk-icon="icon: sign-out" class="uk-light"></a>
@@ -30,6 +30,16 @@
             <a class="uk-logo" href="#">Logo</a>
         </div>{% endcomment %}
     </header>
+    <main>
+        <div class="sidebar">
+            <h2 class="sidebar__title">Меню</h2>
+            <nav class="sidebar__menu">
+                <ul class="menu">
+                    <li class="menu__item{% block menu_item_exercises %}{% endblock %}"><a href="{% url "core:trener:exercises" %}">Упражнения</a></li>
+                </ul>
+            </nav>
+        </div>
+    </main>
 
 </body>
 
