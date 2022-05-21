@@ -1,3 +1,4 @@
+from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 
 from trener.forms import ExerciseForm
@@ -13,3 +14,4 @@ class ExerciseCreate(CreateView):
     model = Exercise
     template_name = 'exercise/create.html'
     form_class = ExerciseForm
+    success_url = reverse_lazy('core:trener:exercises')

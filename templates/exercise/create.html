@@ -4,6 +4,12 @@
 {% block menu_item_exercises %} active{% endblock %}
 
 {% block content %}
+    <div class="uk-flex uk-flex-left uk-padding-large">
+        <ul class="uk-breadcrumb uk-margin-remove">
+            <li><a href="{% url 'core:trener:exercises' %}">Упражнения</a></li>
+            <li><span>Создание упражнений</span></li>
+        </ul>
+    </div>
     <form action="{% url 'core:trener:create_exercise' %}" method="post">
         {% csrf_token %}
         {{ form }}
