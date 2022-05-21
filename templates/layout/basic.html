@@ -22,7 +22,7 @@
                     <a class="uk-navbar-item uk-logo uk-light" href="{% url "core:main" %}">Logo</a>
                 </div>
                 <div class="uk-navbar-right">
-                    <a href="{% url "core:logout" %}" uk-icon="icon: sign-out" class="uk-light"></a>
+                    <a href="{% url "core:logout" %}" class="uk-light uk-inline"><span uk-icon="icon: sign-out"></span><span class="uk-margin-small-left">Выйти</span></a>
                 </div>
             </nav>
         </div>
@@ -38,6 +38,10 @@
                     <li class="menu__item{% block menu_item_exercises %}{% endblock %}"><a href="{% url "core:trener:exercises" %}">Упражнения</a></li>
                 </ul>
             </nav>
+        </div>
+        <div class="content uk-text-center uk-margin-top">
+            {% block content %}
+            {% endblock %}
         </div>
     </main>
 

@@ -1,0 +1,12 @@
+{% extends 'layout/basic.html' %}
+
+{% block title %}Создание упражнения{% endblock %}
+{% block menu_item_exercises %} active{% endblock %}
+
+{% block content %}
+    <form action="{% url 'core:trener:create_exercise' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Save">
+    </form>
+{% endblock %}

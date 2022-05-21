@@ -12,7 +12,7 @@ class DateTimeMixin(models.Model):
 
 
 class ExerciseBase(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, verbose_name="Название упражнения")
 
     class Meta:
         abstract = True

@@ -2,3 +2,12 @@
 
 {% block title %}Упражнения{% endblock %}
 {% block menu_item_exercises %} active{% endblock %}
+
+{% block content %}
+    <div class="uk-flex uk-flex-right uk-padding-large">
+        <a class="uk-button uk-button-default" href="{% url "core:trener:create_exercise" %}">Создать</a>
+    </div>
+    {% if not object_list %}
+        <h1>Записей нет</h1>
+    {% endif %}
+{% endblock %}
