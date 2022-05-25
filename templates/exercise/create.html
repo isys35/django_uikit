@@ -1,5 +1,5 @@
 {% extends 'layout/basic.html' %}
-
+{% load uikit %}
 {% block title %}Создание упражнения{% endblock %}
 {% block menu_item_exercises %} active{% endblock %}
 
@@ -10,9 +10,10 @@
             <li><span>Создание упражнений</span></li>
         </ul>
     </div>
-    <form action="{% url 'core:trener:create_exercise' %}" method="post">
+    <form class="uk-container" action="{% url 'core:trener:create_exercise' %}" method="post">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="Save">
+        {% uikit_field form.name layout='inline' %}
+        {% uikit_button 'Отмена' href="/admin/exercises" extra_classes="uk-button-default" %}
+        {% uikit_button 'Создать' button_type='submit' %}
     </form>
 {% endblock %}
