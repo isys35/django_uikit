@@ -4,13 +4,14 @@
 {% block menu_item_exercises %} active{% endblock %}
 
 {% block content %}
-    <div class="uk-flex uk-flex-left uk-padding-large">
+    <div class="uk-flex uk-flex-left uk-flex-between uk-flex-middle">
         <ul class="uk-breadcrumb uk-margin-remove">
             <li><a href="{% url 'core:trener:exercises' %}">Упражнения</a></li>
             <li><span>Создание упражнений</span></li>
         </ul>
     </div>
-    <form class="uk-container" action="{% url 'core:trener:create_exercise' %}" method="post">
+    <h1 class="uk-text-left">Создание упражнения</h1>
+    <form class="uk-container uk-padding-large" action="{% url 'core:trener:create_exercise' %}" method="post">
         {% csrf_token %}
         {% uikit_field form.name layout='inline' %}
         {% uikit_button 'Отмена' href="/admin/exercises" extra_classes="uk-button-default" %}

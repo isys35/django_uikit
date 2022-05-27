@@ -4,7 +4,7 @@
 {% block menu_item_exercises %} active{% endblock %}
 
 {% block content %}
-    <div class="uk-flex uk-flex-between uk-flex-middle uk-padding-large">
+    <div class="uk-flex uk-flex-between uk-flex-middle">
         <ul class="uk-breadcrumb uk-margin-remove">
             <li><span>Упражнения</span></li>
         </ul>
@@ -12,5 +12,12 @@
     </div>
     {% if not object_list %}
         <h1>Записей нет</h1>
+        {% else %}
+        <h1 class="uk-text-left">Список упражнений</h1>
     {% endif %}
+    <div class="uk-padding-large uk-flex uk-flex-wrap uk-flex-between">
+        {% for exercise in object_list %}
+            {% include 'exercise/card.html' with exercise=exercise %}
+        {% endfor %}
+    </div>
 {% endblock %}

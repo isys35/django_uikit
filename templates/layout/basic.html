@@ -15,7 +15,7 @@
     <title>{% block title %}Главная страница{% endblock %}</title>
 </head>
 <body>
-    <header class="uk-background-primary tm-navbar-container uk-sticky uk-sticky-fixed uk-active uk-sticky-below">
+    <header class="header uk-background-primary tm-navbar-container uk-sticky uk-sticky-fixed">
         <div class="uk-container uk-container-expand">
             <nav class="uk-navbar">
                 <div class="uk-navbar-left">
@@ -39,9 +39,12 @@
                 </ul>
             </nav>
         </div>
-        <div class="content uk-text-center uk-margin-top">
-            {% block content %}
-            {% endblock %}
+        <div class="content uk-text-center">
+            <div class="uk-padding-large">
+                {% block content %}
+                {% endblock %}
+            </div>
+
         </div>
     </main>
 

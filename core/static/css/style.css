@@ -1,12 +1,17 @@
+:root {
+    --sidebar-width: 200px;
+    --sidebar-padding: 40px;
+}
+
 .login-form {
     max-width: 250px;
 }
 
 .sidebar {
-    padding: 40px;
+    padding: var(--sidebar-padding);
     border-right: 1px solid #d2d1d1;
     position: fixed;
-    width: 200px;
+    width: var(--sidebar-width);
     top: 80px;
     bottom: 0;
     overflow: auto;
@@ -48,10 +53,21 @@
 
 
 .content {
-    margin-left: 300px;
+    margin-left: calc(var(--sidebar-width) + var(--sidebar-padding)*2);
+    width: calc(100% - var(--sidebar-width) - var(--sidebar-padding)*2);
+    margin-top: 80px;
 }
 
 
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.exercise-card {
+    width: 450px;
+}
 
 
 
