@@ -8,14 +8,14 @@
         <ul class="uk-breadcrumb uk-margin-remove">
             <li><span>Упражнения</span></li>
         </ul>
-        <a class="uk-button uk-button-default" href="{% url "core:trener:create_exercise" %}">Создать</a>
+        <a class="uk-button uk-button-default" href="{% url "core:trener:create-exercise" %}">Создать</a>
     </div>
     {% if not object_list %}
         <h1>Записей нет</h1>
         {% else %}
         <h1 class="uk-text-left">Список упражнений</h1>
     {% endif %}
-    <div class="uk-padding-large uk-flex uk-flex-wrap uk-flex-between">
+    <div class="uk-padding-large uk-flex uk-flex-wrap uk-flex-center">
         {% for exercise in object_list %}
             {% include 'exercise/card.html' with exercise=exercise %}
         {% endfor %}

@@ -1,0 +1,15 @@
+{% extends 'layout/basic.html' %}
+
+{% block title %}Упражнения{% endblock %}
+{% block menu_item_exercises %} active{% endblock %}
+
+{% block content %}
+    <div class="uk-flex uk-flex-between uk-flex-middle">
+        <ul class="uk-breadcrumb uk-margin-remove">
+            <li><a href="{% url 'core:trener:exercises' %}">Упражнения</a></li>
+            <li><span>{{ exercise.name }}</span></li>
+        </ul>
+    </div>
+    <h1 class="uk-text-left">{{ exercise.name }}</h1>
+
+{% endblock %}

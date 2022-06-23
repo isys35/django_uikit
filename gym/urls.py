@@ -16,6 +16,10 @@ Including another URLconf
 
 from django.urls import path, include
 
+from api.swagger.schema import schema_view
+
 urlpatterns = [
+    path(r'api/swagger', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('admin/', include('core.urls')),
+    path('api/', include('api.urls'), name='api')
 ]

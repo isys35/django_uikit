@@ -1,5 +1,5 @@
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 
 from trener.forms import ExerciseForm
 from trener.models import Exercise
@@ -15,3 +15,13 @@ class ExerciseCreate(CreateView):
     template_name = 'exercise/create.html'
     form_class = ExerciseForm
     success_url = reverse_lazy('core:trener:exercises')
+
+
+class ExerciseDetail(DetailView):
+    model = Exercise
+    template_name = 'exercise/detail.html'
+
+
+class ExerciseRun(DetailView):
+    model = Exercise
+    template_name = 'exercise/run.html'

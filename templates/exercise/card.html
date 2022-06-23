@@ -1,8 +1,9 @@
 <div class="uk-padding-small">
     <div class="exercise-card uk-card uk-card-default uk-card-body">
         <h3 class="uk-card-title">{{ exercise.name }}</h3>
-        <div class="uk-card-footer">
-            <a href="#" class="uk-button uk-button-text">Подробнее</a>
+        <div class="uk-card-footer uk-flex uk-flex-between">
+            <a href="{% url 'core:trener:exercise-run' pk=exercise.pk %}" class="uk-button uk-button-small uk-button-primary">Выполнить</a>
+            <a href="{% url 'core:trener:exercise-detail' pk=exercise.pk %}" class="uk-button uk-button-text uk-button-small">Подробнее</a>
         </div>
     </div>
 </div>

@@ -11,10 +11,10 @@
         </ul>
     </div>
     <h1 class="uk-text-left">Создание упражнения</h1>
-    <form class="uk-container uk-padding-large" action="{% url 'core:trener:create_exercise' %}" method="post">
+    <form class="uk-container uk-padding-large" action="{% url 'core:trener:create-exercise' %}" method="post">
         {% csrf_token %}
         {% uikit_field form.name layout='inline' %}
-        {% uikit_button 'Отмена' href="/admin/exercises" extra_classes="uk-button-default" %}
+        {% uikit_button 'Отмена' href="/admin/trener/exercises" extra_classes="uk-button-default" %}
         {% uikit_button 'Создать' button_type='submit' %}
     </form>
 {% endblock %}
